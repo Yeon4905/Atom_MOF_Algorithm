@@ -106,7 +106,7 @@ def search_time(k, In, haul):
         times[k][22] += haul
     elif In < 2400:
         times[k][23] += haul
-    return times[k]
+    return times[k], times
 
 
 if __name__ == "__main__":
@@ -143,61 +143,70 @@ if __name__ == "__main__":
     dict_to_dataframe(in_days_gam, Days)
     
     for k in tqdm(range(len(in_days_gam))):
-        times = [[0 for _ in range(0, 2400, 100)] for _ in range(1, 1233)]
+        # times = [[0 for _ in range( for _ in range(1, 1233)]
+        # Times = [0 for _ in range(1, 1233)]
+        # haul = [[[] for _ in range(0, 2400, 100)] for _ in range(1, 1233)]
+        # In = [[[] for _ in range(0, 2400, 100)] for _ in range(1, 1233)]
         for l in range(len(Days[k])):
+            times = [[0 for _ in range(0, 2400, 100)] for _ in range(1, 1233)]
+            Times = [[0 for _ in range(0, 2400, 100)] for _ in range(1, 1233)]
             haul = Days[k].iloc[l][4]
             In = Days[k].iloc[l][1]
-            # if In < 100:
-            #     times[k][0] += haul
-            # elif In < 200:
-            #     times[k][1] += haul
-            # elif In < 300:
-            #     times[k][2] += haul
-            # elif In < 400:
-            #     times[k][3] += haul
-            # elif In < 500:
-            #     times[k][4] += haul
-            # elif In < 600:
-            #     times[k][5] += haul
-            # elif In < 700:
-            #     times[k][6] += haul
-            # elif In < 800:
-            #     times[k][7] += haul
-            # elif In < 900:
-            #     times[k][8] += haul
-            # elif In < 1000:
-            #     times[k][9] += haul
-            # elif In < 1100:
-            #     times[k][10] += haul
-            # elif In < 1200:
-            #     times[k][11] += haul
-            # elif In < 1300:
-            #     times[k][12] += haul
-            # elif In < 1400:
-            #     times[k][13] += haul
-            # elif In < 1500:
-            #     times[k][14] += haul
-            # elif In < 1600:
-            #     times[k][15] += haul
-            # elif In < 1700:
-            #     times[k][16] += haul
-            # elif In < 1800:
-            #     times[k][17] += haul
-            # elif In < 1900:
-            #     times[k][18] += haul
-            # elif In < 2000:
-            #     times[k][19] += haul
-            # elif In < 2100:
-            #     times[k][20] += haul
-            # elif In < 2200:
-            #     times[k][21] += haul
-            # elif In < 2300:
-            #     times[k][22] += haul
-            # elif In < 2400:
-            #     times[k][23] += haul
+
+            if In < 100:
+                times[k][0] += haul
+            elif In < 200:
+                times[k][1] += haul
+            elif In < 300:
+                times[k][2] += haul
+            elif In < 400:
+                times[k][3] += haul
+            elif In < 500:
+                times[k][4] += haul
+            elif In < 600:
+                times[k][5] += haul
+            elif In < 700:
+                times[k][6] += haul
+            elif In < 800:
+                times[k][7] += haul
+            elif In < 900:
+                times[k][8] += haul
+            elif In < 1000:
+                times[k][9] += haul
+            elif In < 1100:
+                times[k][10] += haul
+            elif In < 1200:
+                times[k][11] += haul
+            elif In < 1300:
+                times[k][12] += haul
+            elif In < 1400:
+                times[k][13] += haul
+            elif In < 1500:
+                times[k][14] += haul
+            elif In < 1600:
+                times[k][15] += haul
+            elif In < 1700:
+                times[k][16] += haul
+            elif In < 1800:
+                times[k][17] += haul
+            elif In < 1900:
+                times[k][18] += haul
+            elif In < 2000:
+                times[k][19] += haul
+            elif In < 2100:
+                times[k][20] += haul
+            elif In < 2200:
+                times[k][21] += haul
+            elif In < 2300:
+                times[k][22] += haul
+            elif In < 2400:
+                times[k][23] += haul
             
         # print("time-" + str(k) +":", times[k])
-            times[k].append(search_time(k, In, haul))
+            # times[k] = (search_time(k, In, haul))
+            # print("time-" + str(k) +":", times[k])
+            # Times[k] = pd.DataFrame(times[k])
+            # Times[k].to_csv(df_dir + "양하\\양하" + str(k) + ".csv")
             # Days['sum_haul'] = times[i] 
     # for k in tqdm(range(1, 1233)):
     #     if not Days_gam[k] or Days_shin[k]:
